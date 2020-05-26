@@ -319,6 +319,7 @@ Check out http://www.voxengo.com/impulses/ for free impulse responses. **/
 
     var Wad = function(arg){
 /** Set basic Wad properties **/
+	console.log('create')
         this.source        = arg.source;
         this.destination   = arg.destination || context.destination; // the last node the sound is routed to
         this.volume        = valueOrDefault(arg.volume, 1); // peak volume. min:0, max:1 (actually max is infinite, but ...just keep it at or below 1)
