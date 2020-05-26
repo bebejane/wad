@@ -325,7 +325,7 @@ Check out http://www.voxengo.com/impulses/ for free impulse responses. **/
         this.defaultVolume = this.volume;
         this.playable      = 1; // if this is less than 1, this Wad is still waiting for a file to download before it can play
         this.pitch         = Wad.pitches[arg.pitch] || arg.pitch || 440;
-        this.gain          = [];
+        this.gain          = [context.createGain()];
         this.detune        = arg.detune || 0; // In Cents.
         this.globalReverb  = arg.globalReverb || false;
         this.offset        = arg.offset || 0;
@@ -799,7 +799,7 @@ then finally play the sound by calling playEnv() **/
             this.setUpExternalFxOnPlay(arg, context);
 
 
-            this.gain.unshift(context.createGain()); // sets up the gain node
+            //this.gain.unshift(context.createGain()); // sets up the gain node
             this.gain[0].label = arg.label;
 	    this.gain[0].soundSource = this.soundSource
             this.nodes.push(this.gain[0]);
